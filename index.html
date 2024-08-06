@@ -1,15 +1,28 @@
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
 			.header {
 				width: 100%;
 				height: 168px;
 				background: #1E384F;
 			}
 			.container {
-				max-width: 1140px;
 				height: 100%;
+				max-width: 1140px;
 				margin: auto;
+			}
+			.full-page-height {
+				height: calc(100vh - 168px);
+				min-height: calc(100vh - 168px);
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				position: relative;
 			}
 			.inner-container {
 				padding-top: 50px;
@@ -25,16 +38,18 @@
 			}
 			.body {
 				width: 100%;
-				height: 100vh;
+				height: 100%;
 				background: linear-gradient(180deg, rgba(138, 181, 223, 0.54) 25.4%, rgba(228, 235, 243, 0.54) 94.4%);
 			}
 			.title {
 				color: #2A4057;
 				font-size: 36px;
+				line-height: 42px;
 				font-family: Roboto;
 				font-weight: 500;
 			}
 			.text {
+				line-break: auto;
 				color: #2A4057;
 				font-size: 18px;
 				font-family: Roboto;
@@ -44,16 +59,57 @@
 				color: #337AB7;
 				font-weight: 500;
 			}
+			.bottom-image-wrapper {
+				position:absolute;
+				right: 0;
+				bottom: 0;
+			}
+
+			@media only screen and (max-width: 991px) {
+				body {
+					overflow: auto;
+				}
+				.header {
+					height: 80px;
+				}
+				.body {
+					height: initial;
+				}
+				.logo-image {
+					height: 38px;
+				}
+				.container {
+					padding: 20px;
+					padding-bottom: 0;
+					height: initial;
+				}
+				.full-page-height {
+					height: initial;
+					min-height: calc(100vh - 100px);
+					position: initial;
+				}
+				.inner-container {
+					padding-top: 0;
+					width: 100%;
+				}
+				.bottom-image-wrapper {
+					position: initial;
+					margin: 50px auto 0;
+				}
+				.bottom-image {
+					width: 220px;
+				}
+			}
 		</style>
 	</head>
-	<body style="margin: 0">
+	<body>
 		<div class="header">
 			<div class="container logo">
-				<div><img src="ema-logo.png"/></div>
+				<div><img class="logo-image" src="ema-logo.png"/></div>
 			</div>
 		</div>
 		<div class="body">
-			<div class="container">
+			<div class="container full-page-height">
 				<div class="inner-container text">
 					<div class="title">Atsiprašome, puslapio, kurio ieškote, nėra</div>
 					<div>Elektroninės mokymosi aplinkos kūrėjai praneša, kad nuo 2024 m. liepos 31 d. buvo priimtas sprendimas uždaryti elektroninę mokymosi aplinką „EMA“.</div>
@@ -72,6 +128,9 @@
 						Kilus klausimų rašykite el. paštu: pardavimai@ateitiespamoka.lt.
 					</div>
 					<div>„EMA“ komanda</div>
+				</div>
+				<div class="bottom-image-wrapper">
+					<img class="bottom-image" src="ema-person.png">
 				</div>
 			</div>
 		</div>
