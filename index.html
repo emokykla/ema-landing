@@ -1,139 +1,166 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style>
-			body {
-				margin: 0;
-				overflow: hidden;
-			}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Emapamokos.lt</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<style>
+		body {
+			margin: 0;
+			font-family: "Roboto";
+			background: linear-gradient(180deg, rgba(138, 181, 223, 0.54) 25.4%, rgba(228, 235, 243, 0.54) 94.4%) fixed;
+		}
+
+		.header {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 168px;
+			background: #454C55;
+			flex-shrink: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			height: max-content;
+		}
+
+		.logo-container {
+			width: 1140px;
+		}
+
+		.logo {
+			width: 200px;
+			height: 95px;
+			flex-shrink: 0;
+		}
+
+		.body {
+			display: flex;
+			gap: 40px;
+			flex-direction: row;
+			justify-content: center;
+			width: 100%;
+		}
+
+		.text {
+			padding-left: 20px;
+			padding-right: 20px;
+			max-width: 712px;
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			color: #454C55;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 26px; /* 144.444% */
+		}
+
+		.text-block.text-block-last {
+			margin-bottom: 30px;
+		}
+
+		.text-header {
+			margin-top: 50px;
+			color: #454C55;
+			font-size: 36px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+		}
+
+		.text-art {
+			width: 380px;
+			height: 410px;
+			flex-shrink: 0;
+			margin-top: 168px;
+		}
+
+		.link {
+			color: #337AB7;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 26px;
+			text-decoration-line: underline;
+		}
+
+		@media only screen and (max-width: 1160px) {
 			.header {
-				width: 100%;
-				height: 168px;
-				background: #1E384F;
-			}
-			.container {
-				height: 100%;
-				max-width: 1140px;
-				margin: auto;
-			}
-			.full-page-height {
-				height: calc(100vh - 168px);
-				min-height: calc(100vh - 168px);
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				position: relative;
-			}
-			.inner-container {
-				padding-top: 50px;
-				width: 960px;
-				flex-direction: column;
-				gap: 30px;
-				display: flex;
-			}
-			.logo {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-			}
-			.body {
-				width: 100%;
-				height: 100%;
-				background: linear-gradient(180deg, rgba(138, 181, 223, 0.54) 25.4%, rgba(228, 235, 243, 0.54) 94.4%);
-			}
-			.title {
-				color: #2A4057;
-				font-size: 36px;
-				line-height: 42px;
-				font-family: Roboto;
-				font-weight: 500;
-			}
-			.text {
-				line-break: auto;
-				color: #2A4057;
-				font-size: 18px;
-				font-family: Roboto;
-				line-height: 26px;
-			}
-			.link {
-				color: #337AB7;
-				font-weight: 500;
-			}
-			.bottom-image-wrapper {
-				position:absolute;
-				right: 0;
-				bottom: 0;
+				height: 80px;
 			}
 
-			@media only screen and (max-width: 991px) {
-				body {
-					overflow: auto;
-				}
-				.header {
-					height: 80px;
-				}
-				.body {
-					height: initial;
-				}
-				.logo-image {
-					height: 38px;
-				}
-				.container {
-					padding: 20px;
-					padding-bottom: 0;
-					height: initial;
-				}
-				.full-page-height {
-					height: initial;
-					min-height: calc(100vh - 100px);
-					position: initial;
-				}
-				.inner-container {
-					padding-top: 0;
-					width: 100%;
-				}
-				.bottom-image-wrapper {
-					position: initial;
-					margin: 50px auto 0;
-				}
-				.bottom-image {
-					width: 220px;
-				}
+			.logo {
+				width: 80px;
+				height: 38px;
+				margin-left: 20px;
 			}
-		</style>
-	</head>
-	<body>
-		<div class="header">
-			<div class="container logo">
-				<div><img class="logo-image" src="ema-logo.png"/></div>
+
+			.body {
+				flex-direction: column;
+				height: initial;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.text {
+				max-width: 100%;
+				padding-left: 20px;
+				padding-right: 20px;
+				align-content: center;
+				justify-content: center;
+			}
+
+			.text-art {
+				margin-top: 50px;
+				margin-bottom: 32px;
+			}
+
+			.text-block.text-block-last {
+				margin-bottom: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="header">
+		<div class="logo-container">
+			<img src="/logo.png" class="logo" alt="logo">
+		</div>
+	</div>
+	<div class="body">
+		<div class="text">
+			<div class="text-header">Atsiprašome, puslapio, kurio ieškote, nėra</div>
+			<div class="text-block">
+				Elektroninės mokymosi aplinkos kūrėjai praneša, kad nuo <strong>2024 m. liepos 31 d.</strong> buvo priimtas sprendimas uždaryti elektroninę
+				mokymosi aplinką „EMA“.
+			</div>
+			<div class="text-block">
+				Visus EMA naudotojus kviečiame apsilankyti „EDUKA klasėje“, kur rasite:
+				<ul>
+					<li>Daugiau negu 500 Lietuvos leidyklų „Šviesa“, „TEV“, „Briedis“, „Didakta“, „Katalikų pasaulio leidiniai” vadovėlių (tarp jų ir pačių naujausių).</li>
+					<li>23 skaitmeniniu turiniu papildytus vadovėlius (leidykla „Šviesa“, pagal atnaujintas BP).</li>
+					<li>Daugiau kaip 360 mokytojams skirtų metodinių leidinių: mokytojo k nygų, ilgalaikių planų, metodinių rekomendacijų ir dar daugiau.</li>
+					<li>Įrankių pamokoms ruoštis ir jas vesti.</li>
+				</ul>
+			</div>
+			<div class="text-block">
+				Daugiau informacijos: <a href="https://eduka.lt" class="link">www.eduka.lt</a>
+			</div>
+			<div class="text-block">
+				<strong>Turite klausimų?</strong><br/>
+				Kilus klausimų rašykite el. paštu: pardavimai@ateitiespamoka.lt.
+			</div>
+			<div class="text-block text-block-last">
+				„Egzaminatorius.lt“ komanda
 			</div>
 		</div>
-		<div class="body">
-			<div class="container full-page-height">
-				<div class="inner-container text">
-					<div class="title">Atsiprašome, puslapio, kurio ieškote, nėra</div>
-					<div>Elektroninės mokymosi aplinkos kūrėjai praneša, kad nuo 2024 m. liepos 31 d. buvo priimtas sprendimas uždaryti elektroninę mokymosi aplinką „EMA“.</div>
-					<div class="list-wrapper">
-						<div>Visus EMA naudotojus kviečiame apsilankyti „EDUKA klasėje“, kur rasite:</div>
-						<ul>
-							<li>Daugiau negu 500 Lietuvos leidyklų „Šviesa“, „TEV“, „Briedis“, „Didakta“, „Katalikų pasaulio leidiniai” vadovėlių (tarp jų ir pačių naujausių).</li>
-							<li>23 skaitmeniniu turiniu papildytus vadovėlius (leidykla „Šviesa“, pagal atnaujintas BP).</li>
-							<li>Daugiau kaip 360 mokytojams skirtų metodinių leidinių: mokytojo knygų, ilgalaikių planų, metodinių rekomendacijų ir dar daugiau.</li>
-							<li>Įrankių pamokoms ruoštis ir jas vesti.</li>
-						</ul>
-						<div>Daugiau informacijos: <a class="link" href="https://www.eduka.lt/">www.eduka.lt</a></div>
-					</div>
-					<div>
-						Turite klausimų?<br/>
-						Kilus klausimų rašykite el. paštu: pardavimai@ateitiespamoka.lt.
-					</div>
-					<div>„EMA“ komanda</div>
-				</div>
-				<div class="bottom-image-wrapper">
-					<img class="bottom-image" src="ema-person.png">
-				</div>
-			</div>
-		</div>
-	</body>
+		<img class="text-art" src="/art.png" alt="">
+	</div>
+</div>
+</body>
 </html>
